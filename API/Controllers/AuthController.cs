@@ -48,7 +48,7 @@ namespace API.Controllers
         {
             var userFromRepo = await _repo.Login(userLoginDTO.Username, userLoginDTO.Password);
 
-            if (userLoginDTO == null)
+            if (userFromRepo == null)
                 return Unauthorized();
 
             var claims = new[]
